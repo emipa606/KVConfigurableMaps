@@ -1,14 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ModSyncNinjaData>
-  <ID></ID>
-  <ModName>Configurable Maps</ModName>
-  <Version>1.3.3.1</Version>
+  <ID>d76ab3be-5c15-4368-b925-4bd9b034a854</ID>
+  <ModName>[KV] Configurable Maps (Continued)</ModName>
+  <Version>1.4.1</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
-    <Owner>KiameV</Owner>
-    <Project>rimworld-configurablemaps</Project>
+    <Owner>emipa606</Owner>
+    <Project>KVConfigurableMaps</Project>
     <AboutDir>About</AboutDir>
-    <DownloadFrom>ModSyncReleases</DownloadFrom>
+    <DownloadFrom>ModSyncMainPage</DownloadFrom>
     <Branch>master</Branch>
   </Host>
 </ModSyncNinjaData>
+
+
+
+
+

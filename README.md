@@ -1,45 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ModMetaData>
-  <name>[KV] Configurable Maps (Continued)</name>
-  <packageId>Mlie.KVConfigurableMaps</packageId>
-  <author>Rainbeau Flambe (original), Kiame Vivacity</author>
-  <url>https://github.com/emipa606/KVConfigurableMaps</url>
-  <supportedVersions>
-    <li>1.0</li>
-    <li>1.1</li>
-    <li>1.2</li>
-    <li>1.3</li>
-    <li>1.4</li>
-  </supportedVersions>
-  <modDependencies>
-    <li>
-      <packageId>brrainz.harmony</packageId>
-      <displayName>Harmony</displayName>
-      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
-      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-    </li>
-  </modDependencies>
-  <loadAfter>
-    <li>brrainz.harmony</li>
-  </loadAfter>
-  <description>[img]https://i.imgur.com/buuPQel.png[/img]
+# KVConfigurableMaps
+
+![Image](https://i.imgur.com/buuPQel.png)
+
 Update of Rainbeau Flambe (original), Kiame Vivacitys mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1507370392
 
-[img]https://i.imgur.com/pufA0kM.png[/img]
+![Image](https://i.imgur.com/pufA0kM.png)
 
-[table]
-    [tr]
-        [td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
-        [td][url=https://github.com/emipa606/KVConfigurableMaps][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
-    [/tr]
-    [tr]
-        [td][img]https://i.imgur.com/WjDSfUn.png[/img][/td]
-        [td][img]https://i.imgur.com/h5VwTNL.png[/img][/td]
-    [/tr]
-[/table]
 	
-[img]https://i.imgur.com/Z4GOv8H.png[/img]
+![Image](https://i.imgur.com/Z4GOv8H.png)
+
 "Configurable Maps" provides you with a number of configuration options that you can use to tailor the way your maps generate. Simply visit "Mod Settings" from the game's "Options" menu. You'll find three different sets of options for the mod.
 
 (1) "Things" Settings:
@@ -108,14 +78,17 @@ Direct Download: https://github.com/KiameV/rimworld-configurablemaps/releases/do
 GitHub: https://github.com/KiameV/rimworld-configurablemaps
 
 Like my mods? Consider supporting me!
-[url=https://ko-fi.com/kiamev][img]https://i.imgur.com/i08683D.png[/img][/url]
-[img]https://i.imgur.com/PwoNOj4.png[/img]
-[list]
-[*] See if the the error persists if you just have this mod and its requirements active.
-[*] If not, try adding your other mods until it happens again.
-[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] and command Ctrl+F12
-[*] For best support, please use the Discord-channel for error-reporting.
-[*] Do not report errors by making a discussion-thread, I get no notification of that.
-[*] If you have the solution for a problem, please post it to the GitHub repository.
-[/list]</description>
-</ModMetaData>
+https://ko-fi.com/kiamev]![Image](https://i.imgur.com/i08683D.png)
+
+![Image](https://i.imgur.com/PwoNOj4.png)
+
+
+
+-  See if the the error persists if you just have this mod and its requirements active.
+-  If not, try adding your other mods until it happens again.
+-  Post your error-log using https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib and command Ctrl+F12
+-  For best support, please use the Discord-channel for error-reporting.
+-  Do not report errors by making a discussion-thread, I get no notification of that.
+-  If you have the solution for a problem, please post it to the GitHub repository.
+
+
