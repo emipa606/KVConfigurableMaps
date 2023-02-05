@@ -77,7 +77,8 @@ public static class WindowUtil
             rightLabel = fv.Max.ToString("0.00");
         }
 
-        var num = Widgets.HorizontalSlider(new Rect(x, y, 300f, 20f), result, fv.Min, fv.Max, false, null, leftLabel,
+        var num = Widgets.HorizontalSlider_NewTemp(new Rect(x, y, 300f, 20f), result, fv.Min, fv.Max, false, null,
+            leftLabel,
             rightLabel);
         if (result != num && Math.Abs(result - num) > 0.01)
         {
@@ -102,7 +103,7 @@ public static class WindowUtil
             return;
         }
 
-        var num = Widgets.HorizontalSlider(new Rect(x, y, 300f, 20f), result, fv.Min, fv.Max, false, null,
+        var num = Widgets.HorizontalSlider_NewTemp(new Rect(x, y, 300f, 20f), result, fv.Min, fv.Max, false, null,
             fv.Min.ToString("0.0"), fv.Max.ToString("0.0"));
         if (result != num && Math.Abs(result - num) > 0.001)
         {

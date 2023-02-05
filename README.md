@@ -69,17 +69,6 @@ If you're a modpack maker and want to include "Configurable Maps" in your pack, 
 
 If you have any (helpful) suggestions for improvement, please let me know!
 
-
-
-Ludeon Post: https://ludeon.com/forums/index.php?topic=44428.msg431526#msg431526
-
-Direct Download: https://github.com/KiameV/rimworld-configurablemaps/releases/download/1.3/ConfigurableMaps.zip
-
-GitHub: https://github.com/KiameV/rimworld-configurablemaps
-
-Like my mods? Consider supporting me!
-https://ko-fi.com/kiamev]![Image](https://i.imgur.com/i08683D.png)
-
 ![Image](https://i.imgur.com/PwoNOj4.png)
 
 
@@ -92,3 +81,4 @@ https://ko-fi.com/kiamev]![Image](https://i.imgur.com/i08683D.png)
 -  If you have the solution for a problem, please post it to the GitHub repository.
 
 
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2889137767]Last updated 2023-02-05

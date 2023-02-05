@@ -1,5 +1,8 @@
 # Changelog for KVConfigurableMaps
 
+1.4.2 - Added compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2883213149]Random Goodwill 1.4[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2882785581]Faction Control 1.4[/url]
+
+
 1.4.1 - First publish.
 Used DeepL to update translations for ChineseSimplified, French, German, Russian, Spanish
 

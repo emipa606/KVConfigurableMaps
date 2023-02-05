@@ -320,9 +320,8 @@ public class MapSettings : IExposable, IWindow<MSFieldValues>
         }
 
         num2 = 0;
-        var num3 = num2;
         var fertility = Fertility;
-        num2 = num3 + (fertility != null && fertility.GetMultiplier() == 1f ? 1 : 0);
+        num2 += fertility != null && fertility.GetMultiplier() == 1f ? 1 : 0;
         var num4 = num2;
         var water = Water;
         num2 = num4 + (water != null && water.GetMultiplier() == 1f ? 1 : 0);
