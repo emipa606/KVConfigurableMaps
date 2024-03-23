@@ -1,5 +1,8 @@
 # Changelog for KVConfigurableMaps
 
+1.5.0 - Mod updated for 1.5 and passed autotests
+
+
 1.4.2 - Added compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2883213149]Random Goodwill 1.4[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2882785581]Faction Control 1.4[/url]
 
 
