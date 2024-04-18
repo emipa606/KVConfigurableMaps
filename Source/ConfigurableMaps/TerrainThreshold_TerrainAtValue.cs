@@ -6,11 +6,35 @@ using Verse;
 
 namespace ConfigurableMaps;
 
+[HarmonyPatch(typeof(TerrainPatchMaker), "TerrainAt")]
+public static class TerrainPatchMaker_TerrainAt
+{
+    public static bool ignoreMap;
+
+    public static void Prefix(Map map)
+    {
+        if (map.Biome?.generatesNaturally == false)
+        {
+            ignoreMap = true;
+        }
+    }
+
+    public static void Postfix()
+    {
+        ignoreMap = false;
+    }
+}
+
 [HarmonyPatch(typeof(TerrainThreshold), "TerrainAtValue", null)]
 public static class TerrainThreshold_TerrainAtValue
 {
     public static bool Prefix(List<TerrainThreshold> threshes, float val, ref TerrainDef __result)
     {
+        if (TerrainPatchMaker_TerrainAt.ignoreMap)
+        {
+            return true;
+        }
+
         var terrainDef = __result;
         __result = null;
         var multiplier = MapSettings.Fertility.GetMultiplier();

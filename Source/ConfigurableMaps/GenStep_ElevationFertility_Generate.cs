@@ -13,7 +13,8 @@ public static class GenStep_ElevationFertility_Generate
     [HarmonyPriority(600)]
     public static bool Prefix(Map map)
     {
-        if (Settings.detectedImpassableMaps && map.TileInfo.hilliness == Hilliness.Impassable)
+        if (Settings.detectedImpassableMaps && map.TileInfo.hilliness == Hilliness.Impassable ||
+            map.Biome?.generatesNaturally == false)
         {
             return true;
         }

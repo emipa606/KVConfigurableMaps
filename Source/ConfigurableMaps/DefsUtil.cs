@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using RimWorld;
@@ -41,7 +42,7 @@ internal static class DefsUtil
         var stringBuilder = new StringBuilder();
         stringBuilder.AppendLine("[Configurable Maps] Using Map Settings:");
         BiomeDefs.Clear();
-        foreach (var allDef in DefDatabase<BiomeDef>.AllDefs)
+        foreach (var allDef in DefDatabase<BiomeDef>.AllDefs.Where(def => def.generatesNaturally))
         {
             try
             {

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using HarmonyLib;
 using RimWorld;
@@ -21,7 +22,7 @@ public class HarmonyPatches
         Settings.detectedFertileFields = hashSet.Contains("[RF] Fertile Fields");
         Settings.detectedCuprosStones = hashSet.Contains("Cupro's Stones");
         Settings.detectedImpassableMaps = hashSet.Contains("[KV] Impassable Map Maker");
-        foreach (var allDef in DefDatabase<BiomeDef>.AllDefs)
+        foreach (var allDef in DefDatabase<BiomeDef>.AllDefs.Where(def => def.generatesNaturally))
         {
             CurrentSettings.Biomes.Add(new OriginalAnimalPlant(allDef));
         }
