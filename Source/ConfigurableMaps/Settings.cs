@@ -38,20 +38,11 @@ public class Settings : ModSettings
 
     public void DoWindowContents(Rect rect)
     {
-        if (WorldSettings == null)
-        {
-            WorldSettings = new WorldSettings();
-        }
+        WorldSettings ??= new WorldSettings();
 
-        if (MapSettings == null)
-        {
-            MapSettings = new MapSettings();
-        }
+        MapSettings ??= new MapSettings();
 
-        if (CurrentSettings == null)
-        {
-            CurrentSettings = new CurrentSettings();
-        }
+        CurrentSettings ??= new CurrentSettings();
 
         string text = toShow == ToShow.None ? "WorldChooseButton".Translate() :
             toShow != ToShow.World ? MapSettings.Name : WorldSettings.Name;
@@ -59,8 +50,8 @@ public class Settings : ModSettings
         {
             var list = new List<FloatMenuOption>(3)
             {
-                new FloatMenuOption(WorldSettings.Name, delegate { toShow = ToShow.World; }),
-                new FloatMenuOption(MapSettings.Name, delegate { toShow = ToShow.Map; })
+                new(WorldSettings.Name, delegate { toShow = ToShow.World; }),
+                new(MapSettings.Name, delegate { toShow = ToShow.Map; })
             };
             if (Current.Game != null)
             {
@@ -75,30 +66,21 @@ public class Settings : ModSettings
         {
             case ToShow.World:
             {
-                if (wsFieldValues == null)
-                {
-                    wsFieldValues = WorldSettings.GetFieldValues();
-                }
+                wsFieldValues ??= WorldSettings.GetFieldValues();
 
                 WorldSettings.DoWindowContents(rect, wsFieldValues);
                 break;
             }
             case ToShow.Map:
             {
-                if (msFieldValues == null)
-                {
-                    msFieldValues = MapSettings.GetFieldValues();
-                }
+                msFieldValues ??= MapSettings.GetFieldValues();
 
                 MapSettings.DoWindowContents(rect, msFieldValues);
                 break;
             }
             case ToShow.CurrentGame:
             {
-                if (cgFieldValues == null)
-                {
-                    cgFieldValues = CurrentSettings.GetFieldValues();
-                }
+                cgFieldValues ??= CurrentSettings.GetFieldValues();
 
                 CurrentSettings.DoWindowContents(rect, cgFieldValues);
                 break;
@@ -121,15 +103,9 @@ public class Settings : ModSettings
 
     public override void ExposeData()
     {
-        if (WorldSettings == null)
-        {
-            WorldSettings = new WorldSettings();
-        }
+        WorldSettings ??= new WorldSettings();
 
-        if (MapSettings == null)
-        {
-            MapSettings = new MapSettings();
-        }
+        MapSettings ??= new MapSettings();
 
         base.ExposeData();
         Scribe_Deep.Look(ref WorldSettings, "WorldSettings");

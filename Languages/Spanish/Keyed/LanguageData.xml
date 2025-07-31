@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <RFR.FewerRuinsTerrain>Configurable Maps - Ajustes del terreno</RFR.FewerRuinsTerrain>
   <RFR.FewerRuinsThings>Configurable Maps - Ajustes de las "cosas"</RFR.FewerRuinsThings>
@@ -142,4 +142,11 @@
   <CM.AncientLandingPad>Plataforma de aterrizaje</CM.AncientLandingPad>
   <CM.AncientFences>Cercas</CM.AncientFences>
   <CM.RequiresRestartIfAMapWasCreated>Requiere un reinicio del juego si se ha generado un mapa con este ajuste desactivado.</CM.RequiresRestartIfAMapWasCreated>
+  <!-- <CM.Low>Low</CM.Low> using PowerConsumptionLow -->
+  <!-- <CM.Normal>Normal</CM.Normal> using PlanetPopulation_Normal -->
+  <!-- <CM.High>High</CM.High> using PowerConsumptionHigh -->
+  <!-- <CM.VeryLow>Very Low</CM.VeryLow> using PlanetPopulation_Low -->
+  <!-- <CM.VeryHigh>Very High</CM.VeryHigh> using PsychicDroneLevel_BadExtreme -->
+  <!-- Left for legacy support -->
+  <!-- For versions 1.2 and older -->
 </LanguageData>

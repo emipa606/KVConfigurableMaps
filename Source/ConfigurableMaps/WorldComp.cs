@@ -17,9 +17,9 @@ internal class WorldComp(World world) : WorldComponent(world)
         Settings.Reload();
     }
 
-    public override void FinalizeInit()
+    public override void FinalizeInit(bool fromLoad)
     {
-        base.FinalizeInit();
+        base.FinalizeInit(fromLoad);
         CurrentSettings.ApplySettings(AnimalMultiplier, PlantMultiplier);
     }
 }

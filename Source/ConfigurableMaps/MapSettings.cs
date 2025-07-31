@@ -155,18 +155,12 @@ public class MapSettings : IExposable, IWindow<MSFieldValues>
 
     public static void Initialize()
     {
-        if (Fertility == null)
-        {
-            Fertility = new RandomizableMultiplier0();
-        }
+        Fertility ??= new RandomizableMultiplier0();
 
         Fertility.DefaultValue = 0f;
         Fertility.RandomMin = -3f;
         Fertility.RandomMax = 3f;
-        if (Water == null)
-        {
-            Water = new RandomizableMultiplier0();
-        }
+        Water ??= new RandomizableMultiplier0();
 
         Water.DefaultValue = 0f;
         Water.RandomMin = -0.75f;
@@ -238,61 +232,34 @@ public class MapSettings : IExposable, IWindow<MSFieldValues>
             }
         }
 
-        if (Geysers == null)
-        {
-            Geysers = new RandomizableMultiplier();
-        }
+        Geysers ??= new RandomizableMultiplier();
 
         Geysers.DefaultValue = 1f;
-        if (Mountain == null)
-        {
-            Mountain = new RandomizableMultiplier0();
-        }
+        Mountain ??= new RandomizableMultiplier0();
 
         Mountain.Max = 1.4f;
         Mountain.DefaultValue = 0f;
         Mountain.RandomMin = -0.15f;
         Mountain.RandomMax = 1.4f;
-        if (AnimalDensity == null)
-        {
-            AnimalDensity = new RandomizableMultiplier();
-        }
+        AnimalDensity ??= new RandomizableMultiplier();
 
         AnimalDensity.RandomMax = 6f;
-        if (PlantDensity == null)
-        {
-            PlantDensity = new RandomizableMultiplier();
-        }
+        PlantDensity ??= new RandomizableMultiplier();
 
         PlantDensity.RandomMax = 6f;
-        if (Ruins == null)
-        {
-            Ruins = new RandomizableMultiplier();
-        }
+        Ruins ??= new RandomizableMultiplier();
 
         Ruins.RandomMax = 50f;
-        if (Shrines == null)
-        {
-            Shrines = new RandomizableMultiplier();
-        }
+        Shrines ??= new RandomizableMultiplier();
 
         Shrines.RandomMax = 50f;
-        if (AncientPipelineSection == null)
-        {
-            AncientPipelineSection = new RandomizableMultiplier();
-        }
+        AncientPipelineSection ??= new RandomizableMultiplier();
 
         AncientPipelineSection.RandomMax = 50f;
-        if (AncientJunkClusters == null)
-        {
-            AncientJunkClusters = new RandomizableMultiplier();
-        }
+        AncientJunkClusters ??= new RandomizableMultiplier();
 
         AncientJunkClusters.RandomMax = 50f;
-        if (OreLevels == null)
-        {
-            OreLevels = new RandomizableMultiplier();
-        }
+        OreLevels ??= new RandomizableMultiplier();
 
         OreLevels.DefaultValue = 1f;
         OreLevels.Min = 0f;

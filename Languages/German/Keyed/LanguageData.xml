@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <RFR.FewerRuinsTerrain>Configurable Maps - Gelände Einstellungen</RFR.FewerRuinsTerrain>
   <RFR.FewerRuinsThings>Configurable Maps - "Sonstiges" Einstellungen</RFR.FewerRuinsThings>
@@ -142,4 +142,11 @@
   <CM.RequiresRestartIfAMapWasCreated>Erfordert ein Zurücksetzen des Spiels, wenn eine Karte erstellt wurde, bei der diese Einstellung deaktiviert war.</CM.RequiresRestartIfAMapWasCreated>
   <RFR.AllowFakeOres>Falsche" Erze zulassen</RFR.AllowFakeOres>
   <RFR.AllowFakeOresTip>Wenn diese Option nicht aktiviert ist, werden verdichteter Stahl, Gusseisen und Maschinen nicht auf den Karten erscheinen. Dies macht das Spiel natürlich schwieriger, ermöglicht es Ihnen aber, Karten zu erstellen, die natürlicher aussehen, wenn Sie auf einer Welt spielen wollen, die wirklich unberührt von früherer Besiedlung zu sein scheint.</RFR.AllowFakeOresTip>
+  <!-- <CM.Low>Low</CM.Low> using PowerConsumptionLow -->
+  <!-- <CM.Normal>Normal</CM.Normal> using PlanetPopulation_Normal -->
+  <!-- <CM.High>High</CM.High> using PowerConsumptionHigh -->
+  <!-- <CM.VeryLow>Very Low</CM.VeryLow> using PlanetPopulation_Low -->
+  <!-- <CM.VeryHigh>Very High</CM.VeryHigh> using PsychicDroneLevel_BadExtreme -->
+  <!-- Left for legacy support -->
+  <!-- For versions 1.2 and older -->
 </LanguageData>

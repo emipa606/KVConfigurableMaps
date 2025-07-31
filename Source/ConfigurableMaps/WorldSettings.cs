@@ -18,7 +18,7 @@ public class WorldSettings : IExposable, IWindow<WSFieldValues>
 
     private static bool initCommonalities;
 
-    public static List<StoneCommonality> Commonalities = new List<StoneCommonality>();
+    public static List<StoneCommonality> Commonalities = [];
 
     private float lastY;
 
@@ -118,10 +118,7 @@ public class WorldSettings : IExposable, IWindow<WSFieldValues>
 
     public static void Init()
     {
-        if (Commonalities == null)
-        {
-            Commonalities = new List<StoneCommonality>();
-        }
+        Commonalities ??= [];
 
         if (Commonalities.Count == 0 || !initCommonalities)
         {

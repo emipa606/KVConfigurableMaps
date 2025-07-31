@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <RFR.FewerRuinsTerrain> Conf. Maps - Настройки ландшафта </RFR.FewerRuinsTerrain>
   <RFR.FewerRuinsThings> Conf. Maps - настройки «Вещи» </RFR.FewerRuinsThings>
@@ -142,4 +142,11 @@
   <CM.RequiresRestartIfAMapWasCreated>Требуется перезагрузка игры, если карта была сгенерирована с отключенной настройкой.</CM.RequiresRestartIfAMapWasCreated>
   <RFR.AllowFakeOres>Разрешить "фальшивые" руды</RFR.AllowFakeOres>
   <RFR.AllowFakeOresTip>Если этот параметр не отмечен, уплотненная сталь, пластель и механизмы не будут отображаться на картах. Это, конечно, усложнит игру, но позволит вам создавать карты, которые выглядят более естественно, если вы хотите играть в мире, который кажется действительно нетронутым предыдущими обитателями.</RFR.AllowFakeOresTip>
+  <!-- <CM.Low>Low</CM.Low> using PowerConsumptionLow -->
+  <!-- <CM.Normal>Normal</CM.Normal> using PlanetPopulation_Normal -->
+  <!-- <CM.High>High</CM.High> using PowerConsumptionHigh -->
+  <!-- <CM.VeryLow>Very Low</CM.VeryLow> using PlanetPopulation_Low -->
+  <!-- <CM.VeryHigh>Very High</CM.VeryHigh> using PsychicDroneLevel_BadExtreme -->
+  <!-- Left for legacy support -->
+  <!-- For versions 1.2 and older -->
 </LanguageData>

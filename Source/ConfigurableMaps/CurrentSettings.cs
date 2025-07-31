@@ -31,7 +31,7 @@ public class CurrentSettings : IWindow<List<FieldValue<float>>>
         ];
     }
 
-    public void ApplySettings(List<FieldValue<float>> fvs)
+    public static void ApplySettings(List<FieldValue<float>> fvs)
     {
         if (fvs != null)
         {
@@ -39,7 +39,7 @@ public class CurrentSettings : IWindow<List<FieldValue<float>>>
         }
         else
         {
-            Log.Warning("[Configurable Maps] No values to apply");
+            Log.Message("[Configurable Maps] No values to apply");
         }
     }
 
@@ -48,13 +48,13 @@ public class CurrentSettings : IWindow<List<FieldValue<float>>>
         if (animalMultiplier <= 0f)
         {
             animalMultiplier = MapSettings.AnimalDensity.GetMultiplier();
-            Log.Warning($"[Configurable Maps] No map comp animal, now using {animalMultiplier}");
+            Log.Message($"[Configurable Maps] No map comp animal, now using {animalMultiplier}");
         }
 
         if (plantMultiplier <= 0f)
         {
             plantMultiplier = MapSettings.PlantDensity.GetMultiplier();
-            Log.Warning($"[Configurable Maps] No map comp plant, now using {plantMultiplier}");
+            Log.Message($"[Configurable Maps] No map comp plant, now using {plantMultiplier}");
         }
 
         foreach (var biome in Biomes)

@@ -67,15 +67,9 @@ public static class WindowUtil
             result = -10000f;
         }
 
-        if (leftLabel == null)
-        {
-            leftLabel = fv.Min.ToString("0.00");
-        }
+        leftLabel ??= fv.Min.ToString("0.00");
 
-        if (rightLabel == null)
-        {
-            rightLabel = fv.Max.ToString("0.00");
-        }
+        rightLabel ??= fv.Max.ToString("0.00");
 
         var num = Widgets.HorizontalSlider(new Rect(x, y, 300f, 20f), result, fv.Min, fv.Max, false, null,
             leftLabel,

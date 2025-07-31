@@ -11,8 +11,8 @@ public static class Patch_Page_CreateWorldParams_DoWindowContents
     private static void Postfix(Rect rect)
     {
         var additionalHeight = 0f;
-        if (ModLister.GetActiveModWithIdentifier("thereallemon.randomgoodwill") != null ||
-            ModLister.GetActiveModWithIdentifier("thereallemon.factioncontrol") != null)
+        if (ModLister.GetActiveModWithIdentifier("thereallemon.randomgoodwill", true) != null ||
+            ModLister.GetActiveModWithIdentifier("thereallemon.factioncontrol", true) != null)
         {
             additionalHeight = 40f;
         }

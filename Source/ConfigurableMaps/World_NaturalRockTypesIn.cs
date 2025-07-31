@@ -9,7 +9,7 @@ namespace ConfigurableMaps;
 public static class World_NaturalRockTypesIn
 {
     [HarmonyPriority(800)]
-    public static bool Prefix(int tile, ref IEnumerable<ThingDef> __result)
+    public static bool Prefix(PlanetTile tile, ref IEnumerable<ThingDef> __result)
     {
         Rand.PushState();
         Rand.Seed = tile;

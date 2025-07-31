@@ -2,5 +2,17 @@
   "Continued": true,
   "CanAdd": "0",
   "CanRemove": "0",
-  "PreviewVersion": "1.5"
+  "PreviewVersion": "1.6",
+  "Patches": false,
+  "Defs": false,
+  "Assemblies": true,
+  "LinesOfCode": 67716,
+  "LinesOfXML": 0,
+  "CodeBaseSize": 76,
+  "LastXmlCleaning": "2025-07-31T17:56:31.0975207+02:00",
+  "SocialImageSet": true,
+  "SearchTags": [
+    "configurable",
+    " map generation"
+  ]
 }
