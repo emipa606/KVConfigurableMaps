@@ -8,7 +8,7 @@ using Verse;
 namespace ConfigurableMaps;
 
 [StaticConstructorOnStartup]
-public class HarmonyPatches
+public static class HarmonyPatches
 {
     static HarmonyPatches()
     {

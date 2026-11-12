@@ -7,7 +7,7 @@ using Verse;
 namespace ConfigurableMaps;
 
 [HarmonyPatch(typeof(WorldGenerator), "GenerateWorld")]
-public class WorldGenerator_Generate
+public static class WorldGenerator_Generate
 {
     private static List<WeightedStoneType> weighted;
 

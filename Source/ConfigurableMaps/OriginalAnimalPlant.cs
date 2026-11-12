@@ -1,16 +1,18 @@
 using RimWorld;
 
+namespace ConfigurableMaps;
+
 public readonly struct OriginalAnimalPlant(BiomeDef def)
 {
     private const float MAX_ANIMAL = 40f;
 
     private const float MAX_PLANT = 100f;
 
-    public readonly BiomeDef Def = def;
+    private readonly BiomeDef Def = def;
 
-    public readonly float Animal = def.animalDensity;
+    private readonly float Animal = def.animalDensity;
 
-    public readonly float Plant = def.plantDensity;
+    private readonly float Plant = def.plantDensity;
 
     public void ApplyMultipliers(float animal, float plant)
     {

@@ -7,9 +7,9 @@ namespace ConfigurableMaps;
 
 public static class WindowUtil
 {
-    public delegate string GetLabel<E>(E e) where E : Enum;
+    public delegate string GetLabel<in E>(E e) where E : Enum;
 
-    public delegate void OnChange<T>(T t);
+    public delegate void OnChange<in T>(T t);
 
     public static void DrawFloatInput(float x, ref float y, FieldValue<float> fv)
     {

@@ -1,15 +1,15 @@
 # [[KV] Configurable Maps (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2889137767)
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://img.litet.net/logos/Info.png)
 
 Update of Rainbeau Flambe (original), Kiame Vivacitys mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1507370392
 
 - Added compatibility with [Random Goodwill 1.4](https://steamcommunity.com/sharedfiles/filedetails/?id=2883213149) and [Faction Control 1.4](https://steamcommunity.com/sharedfiles/filedetails/?id=2882785581)
 
-![Image](https://i.imgur.com/pufA0kM.png)
+![Image](https://img.litet.net/logos/Notice.png)
 	
-![Image](https://i.imgur.com/Z4GOv8H.png)
+![Image](https://img.litet.net/logos/OriginalDescription.png)
 
 "Configurable Maps" provides you with a number of configuration options that you can use to tailor the way your maps generate. Simply visit "Mod Settings" from the game's "Options" menu. You'll find three different sets of options for the mod.
 
@@ -70,13 +70,13 @@ If you're a modpack maker and want to include "Configurable Maps" in your pack, 
 
 If you have any (helpful) suggestions for improvement, please let me know!
 
-![Image](https://i.imgur.com/PwoNOj4.png)
+![Image](https://img.litet.net/logos/ReportingIssues.png)
 
 
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
+-  Always post your log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404)
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
@@ -84,4 +84,4 @@ If you have any (helpful) suggestions for improvement, please let me know!
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/KVConfigurableMaps?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2889137767) | tags: configurable,  map generation
+[![Image](https://img.shields.io/github/v/release/emipa606/KVConfigurableMaps?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2889137767) | configurable, map generation

@@ -170,6 +170,6 @@ internal static class DefsUtil
 
     private struct ScattererValues(FloatRange fr)
     {
-        public readonly FloatRange CountPer10kCellsRange = new FloatRange(fr.min, fr.max);
+        public readonly FloatRange CountPer10kCellsRange = new(fr.min, fr.max);
     }
 }

@@ -16,7 +16,7 @@ internal class SettingsWindow : Window
         absorbInputAroundWindow = true;
     }
 
-    public override Vector2 InitialSize => new Vector2(900f, 740f);
+    public override Vector2 InitialSize => new(900f, 740f);
 
     public override void PostClose()
     {
@@ -24,8 +24,8 @@ internal class SettingsWindow : Window
         mod.WriteSettings();
     }
 
-    public override void DoWindowContents(Rect canvas)
+    public override void DoWindowContents(Rect inRect)
     {
-        mod.DoSettingsWindowContents(new Rect(0f, 0f, canvas.width, canvas.height - CloseButSize.y));
+        mod.DoSettingsWindowContents(new Rect(0f, 0f, inRect.width, inRect.height - CloseButSize.y));
     }
 }

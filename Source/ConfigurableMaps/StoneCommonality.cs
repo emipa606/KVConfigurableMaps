@@ -4,7 +4,7 @@ namespace ConfigurableMaps;
 
 public class StoneCommonality : IExposable
 {
-    public const float DEFAULT_COMMONALITY = 50f;
+    private const float DEFAULT_COMMONALITY = 50f;
 
     public float Commonality;
 

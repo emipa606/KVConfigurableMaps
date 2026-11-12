@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -48,16 +49,16 @@ public class WorldSettings : IExposable, IWindow<WSFieldValues>
 
     public string Name => "CM.WorldSettings".Translate();
 
-    public void DoWindowContents(Rect rect, WSFieldValues fv)
+    public void DoWindowContents(Rect inRect, WSFieldValues fv)
     {
         Init();
-        var y = rect.y;
-        Widgets.Label(new Rect(rect.x, y, rect.width, 28f), "CM.StoneTypes".Translate());
+        var y = inRect.y;
+        Widgets.Label(new Rect(inRect.x, y, inRect.width, 28f), "CM.StoneTypes".Translate());
         y += 30f;
         var stoneMinMaxBuffers = fv.StoneMinMaxBuffers;
         foreach (var fv2 in stoneMinMaxBuffers)
         {
-            WindowUtil.DrawIntInput(rect.x, ref y, fv2);
+            WindowUtil.DrawIntInput(inRect.x, ref y, fv2);
         }
 
         if (StoneMin < 1)
@@ -71,23 +72,23 @@ public class WorldSettings : IExposable, IWindow<WSFieldValues>
         }
 
         y += 20f;
-        Widgets.Label(new Rect(rect.x, y, rect.width, 28f), "CM.StoneCommonality".Translate());
+        Widgets.Label(new Rect(inRect.x, y, inRect.width, 28f), "CM.StoneCommonality".Translate());
         y += 30f;
-        Widgets.Label(new Rect(rect.x, y, 100f, 28f), "Randomize".Translate());
-        Widgets.Checkbox(new Vector2(rect.x + 110f, y - 2f), ref CommonalityRandom);
+        Widgets.Label(new Rect(inRect.x, y, 100f, 28f), "Randomize".Translate());
+        Widgets.Checkbox(new Vector2(inRect.x + 110f, y - 2f), ref CommonalityRandom);
         y += 30f;
         if (CommonalityRandom)
         {
             return;
         }
 
-        Widgets.BeginScrollView(new Rect(rect.x, y, rect.width, rect.height - y), ref scroll,
-            new Rect(0f, 0f, rect.width - rect.x - 16f, lastY));
+        Widgets.BeginScrollView(new Rect(inRect.x, y, inRect.width, inRect.height - y), ref scroll,
+            new Rect(0f, 0f, inRect.width - inRect.x - 16f, lastY));
         lastY = 0f;
         var commonalityBuffers = fv.CommonalityBuffers;
         foreach (var fv3 in commonalityBuffers)
         {
-            WindowUtil.DrawInputWithSlider(rect.x, ref lastY, fv3);
+            WindowUtil.DrawInputWithSlider(inRect.x, ref lastY, fv3);
         }
 
         Widgets.EndScrollView();
@@ -137,12 +138,9 @@ public class WorldSettings : IExposable, IWindow<WSFieldValues>
 
             if (initCommonalities)
             {
-                foreach (var commonality in Commonalities)
+                foreach (var commonality in Commonalities.Where(c => hashSet.Contains(c.StoneDefName)))
                 {
-                    if (hashSet.Contains(commonality.StoneDefName))
-                    {
-                        sortedDictionary[commonality.StoneDefName] = commonality;
-                    }
+                    sortedDictionary[commonality.StoneDefName] = commonality;
                 }
 
                 foreach (var item in hashSet)
@@ -191,7 +189,7 @@ public class WorldSettings : IExposable, IWindow<WSFieldValues>
         Commonalities.RemoveAll(c => c.StoneDef == null);
     }
 
-    private string GetTranslation(string eng, string toTranslate)
+    private static string GetTranslation(string eng, string toTranslate)
     {
         if (toTranslate.TryTranslate(out var result))
         {

@@ -6,7 +6,7 @@ public abstract class ARandomizableMultiplier : IExposable
 {
     public float DefaultValue;
 
-    protected bool IsRandom;
+    private bool IsRandom;
 
     public float Max = 100000f;
 
@@ -21,7 +21,7 @@ public abstract class ARandomizableMultiplier : IExposable
 
     public string ThingDefName;
 
-    public ARandomizableMultiplier()
+    protected ARandomizableMultiplier()
     {
         DefaultValue = 1f;
         Multiplier = 1f;

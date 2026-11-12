@@ -1,34 +1,96 @@
-# GitHub Copilot Instructions for RimWorld Mod Project: Configurable Maps
+# GitHub Copilot Instructions for [KV] Configurable Maps (Continued)
 
 ## Mod Overview and Purpose
-"Configurable Maps" is a RimWorld modification designed to enhance the map generation process by providing players with the ability to customize specific parameters within their game worlds. The mod aims to offer greater control over map features such as elevation, fertility, rock formations, and resource distribution, thus enriching the diversity and gameplay experience.
+The [KV] Configurable Maps (Continued) mod provides configuration options to tailor the way new maps generate in RimWorld. These options are accessible through the "Mod Settings" menu under "Options." The mod allows users to customize various aspects of map generation, including things, terrain, and world map settings.
 
 ## Key Features and Systems
-- **Customizable Map Settings**: Allow players to adjust elevation, fertility, and other environmental factors directly from the game interface.
-- **Randomizable Multipliers**: Implement systems to apply randomness in configuration parameters, enhancing replayability.
-- **Harmony Patches**: Utilize Harmony to integrate new functionality without disrupting the core game mechanics.
-- **XML Configuration**: Facilitate XML integration for defining default settings that can be modified through user input.
-- **Field Value Management**: Employ classes like `FieldValue<T>` and `RandomizableFieldValue<T>` to store and update configurable values.
+### Things Settings
+- **Ruins and Ancient Shrines**: Configure the number of ruins and ancient shrines on new maps.
+- **Building Placement**: Ensure that buildings in ruins are significantly more common than unattached wall segments and are shaped more like rooms than hallways.
+- **Material Selection**: Decide whether ruins should be constructed from map-available stone types or random materials.
+- **Biodensity**: Adjust the density of plant and animal life on new maps relative to base biome values.
+
+### Terrain Settings
+- **Ore Generation**: Control the amount of ore generation to make the game more or less challenging.
+- **Fake Ores**: Disable fake ores like compacted steel, plasteel, and machinery.
+- **Geysers**: Adjust the number of geysers for geothermal power.
+- **Stone Chunks**: Control the quantity of stone chunks scattered on new maps.
+- **Mountain Level**: Adjust the level of mountainous terrain.
+- **Soil Fertility**: Modify the soil fertility to balance rich and regular soil.
+
+### World Map Settings
+- **Stone Types**: Configure the minimum and maximum number of stone types that can appear in a tile on the world map.
+- **Stone Commonality**: Adjust the relative commonality of various stone types.
 
 ## Coding Patterns and Conventions
-- **Class Naming**: Use clear and descriptive class names that indicate their purpose, such as `RandomizableMultiplier` and `SettingsController`.
-- **Method Naming**: Employ action-oriented names for methods reflecting their functionality, like `DoWindowContents`, `ApplySettings`, and `ExposeData`.
-- **Inheritance and Interfaces**: Leverage abstract classes such as `ARandomizableMultiplier` and utilize interfaces like `IExposable` and `IWindow<T>` for consistent expose and window operations.
-- **Access Modifiers**: Keep internal utilities with restricted access, like the `internal static class DefsUtil`, ensuring encapsulation of core logic.
+### General Conventions
+- Follow the RimWorld modding conventions for naming and structuring code.
+- Use descriptive and meaningful variable and method names.
+- Implement mod settings through the RimWorld Mod Settings framework.
+- Ensure compatibility with other mods by avoiding conflicts in namespace and method names.
+
+### Harmony Patching
+- Use Pardeike's Harmony Patch Library for patching RimWorld methods.
+- Prefixes and postfixes are commonly used to modify method behavior.
+- Ensure that patches are well-documented and maintain compatibility with future RimWorld updates.
+
+### XML Integration
+- Use XML files to define mod metadata, settings, and other configurations.
+- Ensure XML files are well-structured and follow RimWorld's XML conventions.
+- Use XML to define new settings and integrate them with the mod settings UI.
 
 ## XML Integration
-- Integrate XML configurations to define biomes, settings defaults, and other map-related parameters, facilitating easier updates and customizations.
-- Structure XML files to represent default settings, which can be overridden in-game, ensuring smooth transitions between built-in and user-defined configurations.
+The mod uses the following XML files:
+- **About.xml**: Contains metadata about the mod, including the author and description.
+- **ModSync.xml**: Defines the synchronization settings for the mod.
+- **Version.xml**: Specifies the version of the mod and its compatibility with RimWorld.
 
 ## Harmony Patching
-- **Patching Philosophy**: Utilize Harmony for method patching to introduce custom logic without modifying original game code. This promotes compatibility and reduces risk of conflicts with other mods.
-- **Example Patch**: Implement patches like `Patch_Page_CreateWorldParams_DoWindowContents` to alter UI elements dynamically.
-- **Safety Considerations**: Ensure all patches are non-destructive and reversible, mimicking original function signatures closely to maintain stability.
+The mod uses Harmony patches to modify the following methods:
+- `BaseGenUtility.RandomCheapWallStuff`
+- `GenStep_RockChunks.GrowLowRockFormationFrom`
+- `GenStep_Scatterer.CountFromPer10kCells`
+
+### Example Patch
+csharp
+using HarmonyLib;
+using RimWorld;
+
+namespace ConfigurableMaps
+{
+    [HarmonyPatch(typeof(BaseGenUtility), "RandomCheapWallStuff")]
+    public static class BaseGenUtility_RandomCheapWallStuff
+    {
+        [HarmonyPostfix]
+        public static void Postfix(ref ThingDef __result)
+        {
+            // Custom logic to modify the wall stuff
+        }
+    }
+}
+
 
 ## Suggestions for Copilot
-- **Boilerplate Code**: Generate common RimWorld modding structures, such as boilerplate for `IExposable` implementations or Harmony patch templates.
-- **Method Stubs**: Assist in creating stubs for commonly used functions in map generation and mod settings.
-- **Pattern Recognition**: Identify and suggest recurring patterns in XML parsing or field value management to promote uniformity across the codebase.
-- **Refactoring Guidance**: Provide suggestions for extracting reusable components, improving code modularity and maintainability.
+- **Documentation**: Ensure that all patches and methods are well-documented with XML comments.
+- **Testing**: Implement comprehensive testing for new features and patches.
+- **Compatibility**: Test the mod with other popular mods to ensure compatibility.
+- **Feedback**: Encourage users to provide feedback on new features and improvements.
+- **Translation**: Consider adding more language translations to support a broader user base.
 
-This instruction file consolidates the mod's intentions and structure into a comprehensive guide, ensuring collaborators can utilize GitHub Copilot effectively to enhance and extend the "Configurable Maps" mod's functionality in RimWorld.
+By following these guidelines and using Copilot effectively, you can contribute to the continued development and improvement of the [KV] Configurable Maps (Continued) mod.
+
+## Project Solution Guidelines
+- Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
+- Use these in-solution XML files as the primary files for reference and modification.
+- The `.github/copilot-instructions.md` file is included in the solution under the `.github` solution folder, so it should be read/modified from within the solution instead of using paths outside the solution. Update this file once only, as it and the parent-path solution reference point to the same file in this workspace.
+- When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution `.github` copy as the primary file.
+- In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.
+- For any new documentation, update this copilot-instructions.md file rather than creating separate documentation files.
+
+
+## Hard rules (must follow)
+- Do NOT run commands that modify the repo (no git commit, git apply, dotnet format) unless explicitly asked.
+- Prefer minimal reads: read only the smallest code region needed (around the suspicious lines).
+- When mentioning SonarQube issues, automatically use the SonarQube MCP service to fetch and address issues instead of making inferred fixes without querying SonarQube first.
+- When mentioning the rimworld log, automatically use the Rimworld MCP service to fetch the log.
+

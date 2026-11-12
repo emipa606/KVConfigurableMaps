@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
@@ -8,7 +9,7 @@ using Verse;
 namespace ConfigurableMaps;
 
 [HarmonyPatch(typeof(MapGenerator), "GenerateMap")]
-public class MapGenerator_Generate
+public static class MapGenerator_Generate
 {
     private static RandomizableMultiplier0 buMtnValue;
 
@@ -91,28 +92,12 @@ public class MapGenerator_Generate
             }
         }
 
-        foreach (var genStep in mapGenerator.genSteps)
+        if (mapGenerator.genSteps.Any(genStep => genStep.genStep.def.defName.Contains("Archonexus")))
         {
-            if (genStep.genStep.def.defName.Contains("Archonexus"))
-            {
-                return true;
-            }
+            return true;
         }
 
-        if (extraGenStepDefs == null)
-        {
-            return false;
-        }
-
-        foreach (var extraGenStepDef in extraGenStepDefs)
-        {
-            if (extraGenStepDef.def.defName.Contains("Archonexus"))
-            {
-                return true;
-            }
-        }
-
-        return false;
+        return extraGenStepDefs != null && extraGenStepDefs.Any(genStep => genStep.def.defName.Contains("Archonexus"));
     }
 
     [HarmonyPriority(800)]

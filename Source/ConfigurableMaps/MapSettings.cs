@@ -21,7 +21,7 @@ public class MapSettings : IExposable, IWindow<MSFieldValues>
 
     public static List<RandomizableMultiplier> Mineables;
 
-    public static bool AreWallsMadeFromLocal;
+    private static bool AreWallsMadeFromLocal;
 
     public static RandomizableMultiplier AnimalDensity;
 
@@ -66,18 +66,18 @@ public class MapSettings : IExposable, IWindow<MSFieldValues>
 
     public string Name => "CM.MapSettings".Translate();
 
-    public void DoWindowContents(Rect rect, MSFieldValues fv)
+    public void DoWindowContents(Rect inRect, MSFieldValues fv)
     {
-        var num = rect.width * 0.5f;
+        var num = inRect.width * 0.5f;
         var num2 = num - 10f;
         var width = num2 - 16f;
-        var num3 = rect.y + 5f;
+        var num3 = inRect.y + 5f;
         var num4 = num3;
         Widgets.Label(new Rect(0f, num4, width, 28f), "CM.TerrainType".Translate());
         num4 += 30f;
         WindowUtil.DrawEnumSelection(0f, ref num4, "CM.ChunksLevel", ChunkLevel, GetChunkLevelLabel,
             delegate(ChunkLevelEnum e) { ChunkLevel = e; });
-        Widgets.BeginScrollView(new Rect(rect.x, num4, num2, rect.height - num4), ref terrainScroll,
+        Widgets.BeginScrollView(new Rect(inRect.x, num4, num2, inRect.height - num4), ref terrainScroll,
             new Rect(0f, 0f, width, lastYTerrain));
         lastYTerrain = 0f;
         for (var i = 0; i < fv.TerrainFieldValues.Count; i++)
@@ -106,7 +106,7 @@ public class MapSettings : IExposable, IWindow<MSFieldValues>
         num4 += 5f;
         Widgets.Label(new Rect(num, num4, num2, 28f), "CM.Multipliers".Translate());
         num4 += 30f;
-        Widgets.BeginScrollView(new Rect(num, num4, num2, rect.height - num4), ref thingsScroll,
+        Widgets.BeginScrollView(new Rect(num, num4, num2, inRect.height - num4), ref thingsScroll,
             new Rect(0f, 0f, num2 - 16f, lastYThings));
         lastYThings = 0f;
         var thingsFieldValues = fv.ThingsFieldValues;
@@ -268,13 +268,7 @@ public class MapSettings : IExposable, IWindow<MSFieldValues>
         var num2 = 0;
         if (Mineables != null)
         {
-            foreach (var mineable2 in Mineables)
-            {
-                if (mineable2.GetMultiplier() == 1f)
-                {
-                    num2++;
-                }
-            }
+            num2 = Mineables.Count(m => m.GetMultiplier() == 1f);
 
             if (num2 > 3)
             {
@@ -288,13 +282,13 @@ public class MapSettings : IExposable, IWindow<MSFieldValues>
 
         num2 = 0;
         var fertility = Fertility;
-        num2 += fertility != null && fertility.GetMultiplier() == 1f ? 1 : 0;
+        num2 += fertility.GetMultiplier() == 1f ? 1 : 0;
         var num4 = num2;
         var water = Water;
-        num2 = num4 + (water != null && water.GetMultiplier() == 1f ? 1 : 0);
+        num2 = num4 + (water.GetMultiplier() == 1f ? 1 : 0);
         var num5 = num2;
         var mountain = Mountain;
-        num2 = num5 + (mountain != null && mountain.GetMultiplier() == 1f ? 1 : 0);
+        num2 = num5 + (mountain.GetMultiplier() == 1f ? 1 : 0);
         if (num2 < 2)
         {
             return;
@@ -321,7 +315,7 @@ public class MapSettings : IExposable, IWindow<MSFieldValues>
         return num != b;
     }
 
-    private string GetChunkLevelLabel(ChunkLevelEnum e)
+    private static string GetChunkLevelLabel(ChunkLevelEnum e)
     {
         return e switch
         {

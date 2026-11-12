@@ -12,15 +12,15 @@ public class Settings : ModSettings
 
     public static bool detectedCuprosStones;
 
-    internal static ToShow toShow;
+    private static ToShow toShow;
 
     private static List<FieldValue<float>> cgFieldValues;
 
-    public static WorldSettings WorldSettings;
+    private static WorldSettings WorldSettings;
 
-    public static MapSettings MapSettings;
+    private static MapSettings MapSettings;
 
-    public static CurrentSettings CurrentSettings;
+    private static CurrentSettings CurrentSettings;
 
     private MSFieldValues msFieldValues;
 
@@ -44,8 +44,16 @@ public class Settings : ModSettings
 
         CurrentSettings ??= new CurrentSettings();
 
-        string text = toShow == ToShow.None ? "WorldChooseButton".Translate() :
-            toShow != ToShow.World ? MapSettings.Name : WorldSettings.Name;
+        string text;
+        if (toShow == ToShow.None)
+        {
+            text = "WorldChooseButton".Translate();
+        }
+        else
+        {
+            text = toShow != ToShow.World ? MapSettings.Name : WorldSettings.Name;
+        }
+
         if (Widgets.ButtonText(new Rect(rect.x, rect.y, 300f, 28f), text))
         {
             var list = new List<FloatMenuOption>(3)
@@ -122,7 +130,7 @@ public class Settings : ModSettings
         DefsUtil.Restore();
     }
 
-    internal enum ToShow
+    private enum ToShow
     {
         None,
         World,

@@ -1,3 +1,3 @@
 namespace ConfigurableMaps;
 
-public delegate T GetValue<T>();
+public delegate T GetValue<out T>();
